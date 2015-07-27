@@ -5,27 +5,80 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="public/assets/css/normalize.css">
+        <link rel="stylesheet" href="public/assets/css/main.css">
+        <link rel="stylesheet" href="public/assets/css/styles.css">
+        <script src="public/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
 
+        <!-- Header begins -->
+        <header>
+            <nav>
+                <div class="main">
+                    <a href="."><div class="logo"></div></a>
+                    <a href="."></a>
+                    <a href="."></a>
+                </div>
+                <ul class="categories">
+                    <a><li>Popular Games</li><a>
+                    <a><li>Strategy Games</li><a>
+                    <a><li>Arcade Games</li><a>
+                </ul>
+            </nav>
+        </header>
+        <!-- End header -->
+
+
+        <!-- Section: featured game module -->
+        <section>
+            <div class="game-hero"></div>
+            <div class="game-desc">
+                <h1>Name</h1>
+                <h2>Category</h2>
+                <p>Description</p>
+            </div>
+        </section>
+        <!-- End Section: featured game module -->
+
+
+        <!-- Section: list all games -->
+        <section class="game-list">
+            <div class="game-item">
+                <img src="">
+                <p>Solitaire</p>
+            </div>
+            <div class="game-item">
+                <img src="">
+                <p>Solitaire</p>
+            </div>
+        </section>
+        <!-- End Section: list all games -->
+
+
+        <!-- Footer begins -->
+        <footer>
+            <p>&copy; 2015 GamesPlaza</p>
+            <a href=".">Terms and Conditions</a>
+        </footer>
+        <!-- End footer-->
+
+
+        <!-- Footer scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script>window.jQuery || document.write('<script src="public/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="public/js/plugins.js"></script>
+        <script src="public/js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

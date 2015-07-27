@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "gulp-sass": "*",
+    "gulp-minify-css": "*",
+    "gulp-coffee": "*",
+    "gulp-uglify": "*"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-util": "^3.0.6"
+  }
+}
