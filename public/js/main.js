@@ -1,0 +1,1 @@
+$.getJSON("games.json",function(e){return $(".game-list").append(GamesPortal.templates["games-list"](e))});

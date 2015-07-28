@@ -11,21 +11,23 @@
 //   `gulp compile:sass`
 //   `gulp minify:css`
 //   `gulp minify:js`
+//   `gulp templates`
 //
 // *************************************
 
 var gulp 	= require('gulp');
-var gutil = require('gulp-util');
 var plugins = require('gulp-load-plugins')();
 
 var options = {
   build : {
-    tasks       : [ 'compile:sass', 'compile:coffee', 'minify:css', 'minify:js', 'watch' ],
+    //tasks       : [ 'compile:sass', 'compile:coffee', 'templates', 'minify:css', 'minify:js', 'watch' ],
+    tasks       : [ 'compile:sass', 'compile:coffee', 'templates', 'minify:css', 'watch' ],
     paths : {
       sass        : './sass/**/*.scss',
       css         : './public/assets/css/',
       coffee      : './app/**/*.coffee',
-      js          : './public/js/'
+      js          : './public/js/',
+      templates   : './templates/'
     }
   }
 };
@@ -77,7 +79,7 @@ gulp.task('compile:sass', function () {
 gulp.task('compile:coffee', function () {
 
   gulp.src(options.build.paths.coffee)
-    .pipe(plugins.coffee({bare: true}).on('error', gutil.log))
+    .pipe(plugins.coffee({bare: true}).on('error', plugins.util.log))
     .pipe(gulp.dest(options.build.paths.js));
 
 });
@@ -110,6 +112,25 @@ gulp.task('minify:js', function () {
 
 
 // -------------------------------------
+//   Task: Templates
+// -------------------------------------
+
+gulp.task('templates', function () {
+
+  gulp.src(options.build.paths.templates + '*.hbs')
+    .pipe(plugins.handlebars())
+    .pipe(plugins.wrap('Handlebars.template(<%= contents %>)'))
+    .pipe(plugins.declare({
+      namespace: 'GamesPortal.templates',
+      noRedeclare: true, // Avoid duplicate declarations 
+    }))
+    .pipe(plugins.concat('templates.js'))
+    .pipe(gulp.dest(options.build.paths.js));
+
+});
+
+
+// -------------------------------------
 //   Task: Watch
 // -------------------------------------
 
@@ -120,6 +141,8 @@ gulp.task('watch', function () {
 
   gulp.watch(options.build.paths.coffee, ['compile:coffee']);
   gulp.watch(options.build.paths.js + '*.js', ['minify:js']);
+
+  gulp.watch(options.build.paths.templates + '*.hbs', ['templates']);  
 
 });
 
