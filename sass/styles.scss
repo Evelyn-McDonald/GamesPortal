@@ -101,6 +101,11 @@ span.typcn {
 */
 header {
 	overflow: hidden;
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);
+	   -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);
+			box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);
+	position: relative;
+	z-index: 100;
 	nav {
 		.main {
 			background-color: $white;
@@ -108,11 +113,12 @@ header {
 			margin-top: 20px;
 			.wrapper {
 				.logo {
-					background: transparent url(../img/logo.png) no-repeat;
-					background-size: auto 100%;
+					background: transparent url(../img/logo.png) no-repeat left center;
+					background-size: 100% auto;
 	  				display: inline-block;
-	  				height: 70px;
-	  				width: 288px;
+	  				height: 65px;
+	  				max-width: 288px;
+	  				width: 55%;
 				}
 				.controls {
 					float: right;
@@ -162,29 +168,43 @@ header {
 		overflow: hidden;
 		img { 
 			height: 240px;
-			min-width: 100%; 
+			min-width: 100%;
 		}
 	}
 	.game-desc {
 		background: $blue;
 		padding-top: 20px;
 		padding-bottom: 30px;
+		-webkit-box-shadow: 0px -2px 3px 0px rgba(0,0,0,0.4);
+		   -moz-box-shadow: 0px -2px 3px 0px rgba(0,0,0,0.4);
+				box-shadow: 0px -2px 3px 0px rgba(0,0,0,0.4);
+		position: relative;
 	}
 }
 
 
 .game-list {
 	overflow: auto;
-	padding: 40px inherit 0;
+	padding-bottom: 0;
+	padding-top: 40px;
 	.game-item {
 		display: inline-block;
 		float: left;
 		text-align: center;
-		width: 33%;
+		width: 27%;
+		&:hover {
+			cursor: pointer;
+		}
+		&:nth-child(3n+2) {
+			margin: 0 9%;
+		}
 		p { 
 			color: $grey-dark; 
 			font-weight: 600;
 			margin: 20px 0 40px; 
+		}
+		img {
+			width: 100%;
 		}
 	}
 }
@@ -209,4 +229,40 @@ span.hr {
 	display: block;
 	height: 6px;
 	width: 100%
+}
+
+
+.slick-slider {
+	ul.slick-dots {
+		left: 38%;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		top: 183px;
+		li {
+			display: inline-block;
+			button {
+				background: transparent;
+  				border: 2px solid $white;
+  				color: transparent;
+				height: 18px;
+				margin: 5px;
+				width: 18px;
+  				@include border-radius(10px);
+			}
+			&.slick-active button {
+				background-color: $white;
+			}
+		}
+	}
+}
+
+.modal-body {
+	padding: 0;
+	button.close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
 }

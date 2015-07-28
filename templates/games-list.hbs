@@ -1,10 +1,6 @@
 {{#each this}}
-    <div class="game-item">
-        <a href="{{this.gamePlayUrl}}">
-            <img src="{{this.mediaFiles.ICON.[130]}}">
-        </a>
-        <a href="{{this.gamePlayUrl}}">
-            <h3>{{this.name}}</h3>
-        </a>
+    <div class="game-item" data-toggle="modal" data-target="#gameModal" data-banner="{{this.mediaFiles.FEATURED_TWO_THIRDS.[840]}}" data-name="{{this.name}}" data-desc="{{this.description}}" data-play="{{this.gamePlayUrl}}">
+        <img src="{{this.mediaFiles.ICON.[130]}}">
+        <h3>{{this.name}}</h3>
     </div>
 {{/each}}
