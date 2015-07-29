@@ -211,13 +211,9 @@ header {
 				padding: 52px 0 0; 
 			}
 			.scrollable-nav {
-				height: 100%;
 				margin-left: -50%;
 				width: 200%;
 				a {
-					height: 100%;
-					display: inline-block;
-					overflow: auto;
 					li {
 						color: $white-trans;
 						display: inline-block;
@@ -226,13 +222,17 @@ header {
 						list-style: none;
 						margin: 0 10px 0;
 						@media screen and (min-width: 400px ) { font-size: 22px; }
+						&::after {
+							content: url("../img/white-dot.png");
+							display: block;
+							margin-top: -5px;
+							visibility: hidden;
+							@media screen and (min-width: 400px ) { margin-top: -10px; }
+						}
 						&.active {
 							color: $white;
 							&::after {
-								content: url("../img/white-dot.png");
-								display: block;
-								margin-top: -5px;
-								@media screen and (min-width: 400px ) { margin-top: -10px; }
+								visibility: visible;
 							}
 						}
 					}
