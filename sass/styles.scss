@@ -41,9 +41,10 @@ $white-trans:	rgba(255,255,255,0.6);
 }
 h1 {
 	color: $white;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 400;
 	margin: 0;
+	@media screen and (min-width: 400px ) { font-size: 24px; }
 }
 h2 {
 	color: $white;
@@ -53,9 +54,10 @@ h2 {
 }
 h3 {
 	color: $grey-dark; 
-	font-size: 15px;
+	font-size: 12px;
 	font-weight: 600;
 	margin: 20px 0 20px;
+	@media screen and (min-width: 400px ) { font-size: 15px; }
 }
 h4 {
 
@@ -65,9 +67,10 @@ h5 {
 }
 p {
 	color: $white;
-	font-size: 15px;
+	font-size: 12px;
 	font-weight: 300;
-	margin: 15px 0;
+	margin: 0 0 15px;
+	@media screen and (min-width: 400px ) { font-size: 15px; }
 }
 a {
 	color: $grey-dark;
@@ -81,7 +84,7 @@ a {
 		background-color: $orange;
 		color: $white;
 		display: inline-block;
-		font-size: 20px;
+		font-size: 18px;
 		font-weight: 400;
 		padding: 6px 12px 7px;
 		span.typcn {
@@ -97,6 +100,7 @@ a {
 			background-color: $orange-light; 
 			text-decoration: none;
 		}
+		@media screen and (min-width: 400px ) { font-size: 20px; }
 	}
 }
 span.typcn {
@@ -111,6 +115,12 @@ span.typcn {
 //   Layout styles
 // -------------------------------------
 */
+body {
+	background: #ddd;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1080px;
+}
 .container {
 	padding: 0 20px;
 	@media screen and (min-width: 620px) {
@@ -125,6 +135,7 @@ span.typcn {
 // -------------------------------------
 */
 header {
+	background: $white;
 	overflow: hidden;
 	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);
 	   -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);
@@ -135,7 +146,8 @@ header {
 		.main {
 			background-color: $white;
 			height: 70px;
-			margin-top: 20px;
+			margin-top: 0px;
+			@media screen and (min-width: 400px ) { margin-top: 20px; }
 			.wrapper {
 				.logo {
 					background: transparent url(../img/logo.png) no-repeat left bottom;
@@ -180,13 +192,17 @@ header {
 		ul.categories {
 			background: url(../img/bg-mobile.jpg) no-repeat center center;
 			background-size: 100% auto;
-			height: 106px;
+			height: 70px;
 			margin: -28px 0 0;
-			padding: 52px 0 0;
+			padding: 30px 0 0;
 			text-align: center;
 			@media screen and (min-width: 900px) {
 				background: url(../img/bg-desktop.jpg) no-repeat center center;
 				background-size: 100% auto;
+			}
+			@media screen and (min-width: 400px ) { 
+				height: 106px;
+				padding: 52px 0 0; 
 			}
 			.scrollable-nav {
 				height: 100%;
@@ -199,16 +215,18 @@ header {
 					li {
 						color: $white-trans;
 						display: inline-block;
-						font-size: 22px;
+						font-size: 15px;
 						font-weight: 300;
 						list-style: none;
 						margin: 0 10px 0;
+						@media screen and (min-width: 400px ) { font-size: 22px; }
 						&.active {
 							color: $white;
 							&::after {
 								content: url("../img/white-dot.png");
 								display: block;
-								margin-top: -10px;
+								margin-top: -5px;
+								@media screen and (min-width: 400px ) { margin-top: -10px; }
 							}
 						}
 					}
@@ -240,6 +258,7 @@ header {
 		.game-hero {
 			float: left;
 			width: 50%;
+			img { min-height: 260px; }
 		}
 		.game-desc {
 			float: right;
@@ -250,9 +269,11 @@ header {
 
 
 .game-list {
+	background: $white;
 	overflow: auto;
 	padding-bottom: 0;
-	padding-top: 40px;
+	padding-top: 30px;
+	@media screen and (min-width: 400px ) { padding-top: 40px; }
 	.game-item {
 		display: inline-block;
 		float: left;
@@ -278,9 +299,10 @@ header {
 			}
 		}
 		@media screen and (min-width: 900px) {
-			max-width: 144px;
-			width: auto;
-			margin: 0 30px !important;
+			// max-width: 144px;
+			// width: auto;
+			width: 13%;
+			margin: 0 16px !important;
 		}
 		p { 
 			color: $grey-dark; 
@@ -288,7 +310,8 @@ header {
 			margin: 20px 0 40px; 
 		}
 		h3 {
-			min-height: 65px;
+			min-height: 35px;
+			@media screen and (min-width: 400px ) { min-height: 65px; }
 		}
 		img {
 			width: 100%;
@@ -297,11 +320,11 @@ header {
 }
 
 footer {
+	background: $white;
 	height: 60px;
 	a {
 		display: inline-block;
 		float: right;
-		margin-top: 15px;
 	}
 	p { 
 		color: $grey-dark; 
@@ -315,35 +338,15 @@ span.hr {
 	background-size: 100% 100%;
 	display: block;
 	height: 6px;
+	margin-bottom: 15px;
 	width: 100%
 }
 
 
-.slick-slider {
-	ul.slick-dots {
-		left: 35%;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		position: absolute;
-		top: 50%;
-		li {
-			display: inline-block;
-			button {
-				background: transparent;
-  				border: 2px solid $white;
-  				color: transparent;
-				height: 18px;
-				margin: 5px;
-				width: 18px;
-  				@include border-radius(10px);
-			}
-			&.slick-active button {
-				background-color: $white;
-			}
-		}
-	}
-	.slick-slide:focus { outline: none; }
+.br-theme-bootstrap-stars .br-widget {
+	height: auto;
+	margin: 4px 0 12px;
+	a { font-size: 15px; }
 }
 
 .modal-body {
