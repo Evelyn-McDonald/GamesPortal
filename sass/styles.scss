@@ -152,7 +152,7 @@ header {
 					float: right;
 					a {
 						&:first-child {	
-							margin-right: 0px;	
+							margin-right: 5px;	
 							@media screen and (min-width: 420px) {
 								margin-right: 8px;	
 							}
@@ -189,10 +189,13 @@ header {
 				background-size: 100% auto;
 			}
 			.scrollable-nav {
+				height: 100%;
 				margin-left: -50%;
 				width: 200%;
 				a {
-					display: inline-flex;
+					height: 100%;
+					display: inline-block;
+					overflow: auto;
 					li {
 						color: $white-trans;
 						display: inline-block;
@@ -254,13 +257,13 @@ header {
 		display: inline-block;
 		float: left;
 		text-align: center;
-		width: 27%;
+		width: 29%;
 		&:hover {
 			cursor: pointer;
 			text-decoration: underline;
 		}
 		&:nth-child(3n+2) {
-			margin: 0 9%;
+			margin: 0 6%;
 		}
 		@media screen and (min-width: 620px) {
 			width: 20%;
